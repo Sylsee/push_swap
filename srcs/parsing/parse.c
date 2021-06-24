@@ -6,30 +6,22 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:45:08 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/24 20:17:35 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/25 00:16:20 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		str_is_digit(char **s)
+t_stack		*ps_parse(int ac, char **av)
 {
-	int i;
-
-	i = -1;
-	while (s[++i])
-		if (s[i] < '0' || s[i]> '9')
-			print_and_exit("Error");
-}
-
-t_stack		*parse(int ac, char **av)
-{
+	int		argc;
 	t_stack	*lst;
-	int i;
 
+	argc = ac;
 	while (--ac)
-		str_is_digit(av[ac]);
+		if (!(ft_str_is_digit(av[ac])))
+			print_and_exit("Error");
 	while (--argc)
-		lst = new_node(lst, ps_atoi(argv[argc]));
+		lst = ps_new_node(lst, ps_atoi(av[argc]));
 	return (lst);
 }

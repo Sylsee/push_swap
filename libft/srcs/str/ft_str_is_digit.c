@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/25 00:44:19 by spoliart         ###   ########.fr       */
+/*   Created: 2021/06/25 00:08:33 by spoliart          #+#    #+#             */
+/*   Updated: 2021/06/25 00:12:23 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_str_is_digit(char *s)
 {
-	t_stack	*a;
-	t_env	*env;
+	int i;
 
-	a = parse(argc, argv);
-	if (!(env = malloc(sizeof(env))))
-		free_stack_and_exit("Malloc error", a);
-	env->a = a;
+	i = -1;
+	while (s[++i])
+		if (s[i] < '0' || s[i]> '9')
+			return (0);
+	return (1);
 }

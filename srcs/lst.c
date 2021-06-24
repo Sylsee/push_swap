@@ -6,13 +6,13 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:27:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/24 20:09:41 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/25 00:07:43 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack		*new_node(t_stack lst, char *n)
+t_stack		*ps_new_node(t_stack lst, char *n)
 {
 	int		err;
 	t_stack	*new;
@@ -26,7 +26,6 @@ t_stack		*new_node(t_stack lst, char *n)
 		free(new);
 		ps_lst_delone(lst);
 	}
-	new->prev = NULL;
 	if (lst)
 	{
 		lst->prev = new;
@@ -34,6 +33,7 @@ t_stack		*new_node(t_stack lst, char *n)
 	}
 	else
 		new->next = NULL;
+	new->prev = NULL;
 	return (new);
 }
 

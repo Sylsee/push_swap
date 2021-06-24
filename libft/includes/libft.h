@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:34:43 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:12:39 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/25 00:12:40 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void				ft_strrev(char *str);
 char				*ft_strextract(char const *s, char const *set);
 int					ft_str_end(char *s, char *set);
 int					ft_charset(char c, char *set);
+int					ft_str_is_digit(char *s);
 
 int					ft_atoi(const char *nptr);
 double				ft_atof(char *s);
