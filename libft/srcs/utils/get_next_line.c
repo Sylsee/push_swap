@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:17:20 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:07:54 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:44:39 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_return_gnl(char *s, size_t i)
 	return (1);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char	*tab[FDMAX];
 	size_t		i;

@@ -6,13 +6,13 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 17:05:41 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/22 23:15:41 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:30:47 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_str_end(char *s, char *set)
+int	ft_str_end(char *s, char *set)
 {
 	size_t	i;
 	size_t	j;

@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:29:47 by spoliart          #+#    #+#             */
-/*   Updated: 2020/10/15 19:49:02 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:40:07 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long tmp;
+	long	tmp;
 
 	tmp = n;
 	if (tmp < 0)

@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 00:51:44 by spoliart          #+#    #+#             */
-/*   Updated: 2021/03/27 01:01:42 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:31:13 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free_split(char **tab)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (tab)

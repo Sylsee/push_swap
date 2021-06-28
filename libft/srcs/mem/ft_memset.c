@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:28:56 by spoliart          #+#    #+#             */
-/*   Updated: 2020/10/27 18:07:28 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:39:06 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t len)
 {
-	unsigned char *pt;
+	unsigned char	*pt;
 
 	pt = (unsigned char *)s;
 	while (len--)

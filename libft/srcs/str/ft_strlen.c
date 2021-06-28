@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 20:25:20 by spoliart          #+#    #+#             */
-/*   Updated: 2021/04/21 03:13:26 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:30:59 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	const char *str;
+	const char	*str;
 
 	str = s;
 	while (*str)

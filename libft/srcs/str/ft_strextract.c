@@ -6,15 +6,15 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 23:39:57 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 12:59:56 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:33:50 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isset(char const c, char const *set)
+int	ft_isset(char const c, char const *set)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (set[++i])
@@ -23,10 +23,10 @@ int		ft_isset(char const c, char const *set)
 	return (0);
 }
 
-int		ft_strlen_set(char const *str, char const *set)
+int	ft_strlen_set(char const *str, char const *set)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = -1;
 	count = 0;

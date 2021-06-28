@@ -6,13 +6,13 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 13:00:49 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 12:58:55 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:46:24 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**ft_free_all(char **ret, size_t i)
+static char	**ft_free_all(char **ret, size_t i)
 {
 	while (--i + 1)
 		free(ret[i]);
@@ -22,7 +22,7 @@ static char		**ft_free_all(char **ret, size_t i)
 
 static size_t	ft_wordlen(char const *s, char *set, size_t i)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (s[i] && ft_charset(s[i], set))
@@ -37,8 +37,8 @@ static size_t	ft_wordlen(char const *s, char *set, size_t i)
 
 static size_t	ft_nb_word(char const *s, char *set)
 {
-	size_t i;
-	size_t count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -55,9 +55,9 @@ static size_t	ft_nb_word(char const *s, char *set)
 	return (count);
 }
 
-static char		*ft_fill_tab(char const *s, char *set, char *ret, size_t *i)
+static char	*ft_fill_tab(char const *s, char *set, char *ret, size_t *i)
 {
-	size_t j;
+	size_t	j;
 
 	j = 0;
 	while (s[*i] && ft_charset(s[*i], set))
@@ -72,7 +72,7 @@ static char		*ft_fill_tab(char const *s, char *set, char *ret, size_t *i)
 	return (ret);
 }
 
-char			**ft_split(char const *s, char *set)
+char	**ft_split(char const *s, char *set)
 {
 	char	**ret;
 	size_t	i;

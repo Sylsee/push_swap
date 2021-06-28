@@ -6,13 +6,13 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:23:56 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:06:31 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:39:37 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	long	tmp;

@@ -6,15 +6,15 @@
 /*   By: spoliart <spoliart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 00:47:32 by spoliart          #+#    #+#             */
-/*   Updated: 2021/03/27 00:48:11 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:32:19 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_charset(char c, char *set)
+int	ft_charset(char c, char *set)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (set)

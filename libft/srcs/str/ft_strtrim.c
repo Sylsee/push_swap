@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 20:20:31 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:01:17 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:30:35 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_is_charset(char const c, char const *set)
 {
-	size_t i;
+	size_t	i;
 
 	i = -1;
 	if (set)
@@ -24,7 +24,7 @@ static int	ft_is_charset(char const c, char const *set)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;

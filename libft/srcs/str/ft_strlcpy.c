@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 16:14:23 by spoliart          #+#    #+#             */
-/*   Updated: 2020/10/27 21:49:42 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:29:49 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!src || !dst)

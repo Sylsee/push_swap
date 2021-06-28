@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:17:52 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/07 20:08:08 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:30:03 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_tablen(char **tab)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!tab)

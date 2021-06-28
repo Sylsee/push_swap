@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 16:08:12 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:08:23 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:45:03 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen_chr_gnl(char *s, int c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s)
@@ -25,7 +25,7 @@ size_t	ft_strlen_chr_gnl(char *s, int c)
 
 size_t	ft_strlen_gnl(char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s)
@@ -34,9 +34,9 @@ size_t	ft_strlen_gnl(char *s)
 	return (i);
 }
 
-int		ft_check_gnl(char *s)
+int	ft_check_gnl(char *s)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (!s)

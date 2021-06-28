@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:37:28 by spoliart          #+#    #+#             */
-/*   Updated: 2020/11/15 23:21:11 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:39:47 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_nbrlen(long nb)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nb < 0)

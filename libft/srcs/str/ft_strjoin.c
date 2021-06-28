@@ -6,13 +6,13 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 23:17:08 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:00:26 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:29:34 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
