@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/24 18:25:00 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 22:01:07 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft/includes/libft.h"
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int			n;
 	s_stack		prev;

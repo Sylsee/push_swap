@@ -6,25 +6,27 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:27:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/25 00:07:43 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:57:45 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack		*ps_new_node(t_stack lst, char *n)
+t_stack	*ps_new_node(t_stack *lst, char *n)
 {
 	int		err;
 	t_stack	*new;
 
 	err = 0;
-	if (!(new = malloc(sizeof(new))))
-		print_and_exit("Malloc error");
+	new = malloc(sizeof(new));
+	if (!new)
+		return (NULL);
 	new->n = ps_atoi(n, &err);
 	if (err)
 	{
 		free(new);
-		ps_lst_delone(lst);
+		ps_free_lst(lst);
+		return (NULL);
 	}
 	if (lst)
 	{
@@ -37,9 +39,9 @@ t_stack		*ps_new_node(t_stack lst, char *n)
 	return (new);
 }
 
-void		ps_lst_delone(t_stack lst)
+void	ps_free_lst(t_stack *lst)
 {
-	t_stack	tmp;
+	t_stack	*tmp;
 
 	while (lst)
 	{

@@ -6,19 +6,29 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/25 00:44:19 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 22:43:30 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	start_ps(t_env env)
+{
+
+}
+
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_env	*env;
+	t_env	env;
 
-	a = parse(argc, argv);
-	if (!(env = malloc(sizeof(env))))
-		free_stack_and_exit("Malloc error", a);
-	env->a = a;
+	if (argc == 1)
+		print_and_exit("Error");
+	env.a = parse(argc, argv);
+	if (!(env.a))
+	{
+		free(env);
+		print_and_exit("Error");
+	}
+	start_ps(env);
+	return (0);
 }

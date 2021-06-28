@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:45:13 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/24 20:11:25 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/06/28 21:17:25 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ps_atoi(char *s, int *err)
 {
-	long	nbr;
 	int		negative;
+	long	nbr;
 
 	nbr = 0;
 	sign = 1;
@@ -27,7 +27,7 @@ void	ps_atoi(char *s, int *err)
 		if ((!sign && nbr > INT_MAX) || (sign && nbr > (long)(INT_MAX) + 1))
 		{
 			*err = 1;
-			break ;
+			return (NULL);
 		}
 	}
 	return (nbr * sign);
