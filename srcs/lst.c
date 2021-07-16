@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:27:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/28 21:57:45 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:43:10 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack	*ps_new_node(t_stack *lst, char *n)
 	if (!new)
 		return (NULL);
 	new->n = ps_atoi(n, &err);
-	if (err)
+	if (err == 1)
 	{
 		free(new);
 		ps_free_lst(lst);
