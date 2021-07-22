@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/16 16:59:01 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/22 22:28:53 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	start_ps(t_env *env)
 {
 	env->size = stack_size(env->a);
 	print_stacks(env->a, env->b);
-	pa(&env);
+	pa(env);
 	print_stacks(env->a, env->b);
+	ps_free_lst(env->a);
+	free(env);
 }
 
 int	main(int argc, char **argv)
@@ -25,7 +27,7 @@ int	main(int argc, char **argv)
 	t_env	*env;
 
 	if (argc == 1)
-		print_and_exit("Error");
+		return (0);
 	env = malloc(sizeof(env));
 	if (!env)
 		print_and_exit("Malloc error");
@@ -33,7 +35,7 @@ int	main(int argc, char **argv)
 	if (!(env->a))
 	{
 		free(env);
-		print_and_exit("blError");
+		print_and_exit("Error");
 	}
 	start_ps(env);
 	return (0);

@@ -6,13 +6,13 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/07/16 16:50:18 by spoliart         ###   ########.fr        #
+#    Updated: 2021/07/22 22:19:49 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME_P = push_swap
+NAME = push_swap
 
-_SRCS_P = main.c \
+SRCS =	main.c \
 		error.c \
 		lst.c \
 		parse.c \
@@ -23,30 +23,38 @@ _SRCS_P = main.c \
 		r.c \
 		rr.c
 
-SRCS_P_DIR = srcs
-SRCS_P = $(addprefix $(SRCS_P_DIR)/, $(_SRCS_P))
-SRCO_P = $(SRCS_P:.c=.o)
+DIR_SRCS = ./srcs/
+DIR_OBJS = ./objs/
+OBJS = $(SRCS:%.c=$(DIR_OBJS)%.o)
 
 FLAG = -Wall -Wextra -Werror
 INC = -I includes/
 
-all: $(NAME_P)
+all: $(NAME)
 
-$(NAME_P): $(SRCO_P)
+$(NAME): $(OBJS)
 	make -C libft
-	gcc $(SRCO_P) -Llibft -lft -o $(NAME_P)
+	gcc $(OBJS) -Llibft -lft -o $(NAME)
 
-%.o: %.c
-	gcc $(FLAG) -c $< -o $@ $(INC)
+$(DIR_OBJS)%.o: $(DIR_SRCS)%.c
+	gcc $(FLAG) $(INC) -c $< -o $@
+
+$(OBJS): | $(DIR_OBJS)
+
+$(DIR_OBJS):
+	mkdir -p $(DIR_OBJS)
 
 clean:
 	make clean -C libft
-	rm -f $(SRCO_P)
+	rm -rf $(DIR_OBJS)
 
 fclean: clean
 	make fclean -C libft
-	rm -f $(NAME_P)
+	rm -f $(NAME)
 
 re:
 	make fclean
 	make
+
+norme:
+	norminette includes srcs

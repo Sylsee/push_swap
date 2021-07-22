@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:15:56 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/16 16:57:11 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/22 22:17:32 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(t_env *env)
 {
-	int tmp;
+	int	tmp;
 
 	if (env->size < 2)
 		return ;
@@ -28,7 +28,7 @@ void	sa(t_env *env)
 
 void	sb(t_env *env)
 {
-	int tmp;
+	int	tmp;
 
 	if (env->size < 2)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:21:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/16 14:29:35 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/22 22:16:08 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rra(t_env *env)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!(env->a) || !(env->a->next))
 		return ;
@@ -28,7 +28,7 @@ void	rra(t_env *env)
 
 void	rrb(t_env *env)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!(env->b) || !(env->b->next))
 		return ;

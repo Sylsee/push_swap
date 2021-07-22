@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:51:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/16 14:07:47 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/22 22:16:54 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_env *env)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!(env->b))
 		return ;
@@ -28,7 +28,7 @@ void	pa(t_env *env)
 
 void	pb(t_env *env)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!(env->a))
 		return ;

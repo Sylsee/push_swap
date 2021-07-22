@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/16 16:55:50 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/22 23:47:36 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,16 @@ typedef struct s_env
 {
 	int		size;
 	t_stack	*a;
-	t_stack *b;
+	t_stack	*b;
 }				t_env;
 
 int				main(int ac, char **av);
 void			print_and_exit(char *s);
 t_stack			*ps_parse(int ac, char **av);
-t_stack			*ps_new_node(t_stack *lst, char *n);
+t_stack			*ps_new_node(t_stack **lst, char *n);
+int				create_lst(int ac, char **av, t_stack **lst);
 void			ps_free_lst(t_stack *lst);
-int				ps_atoi(char *s, int *err);
+int				ps_atoi(char *s, int *err, t_stack **lst);
 t_stack			*stack_last(t_stack *stack);
 void			print_stacks(t_stack *a, t_stack *b);
 int				stack_size(t_stack *s);
