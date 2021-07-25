@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 20:20:31 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/28 21:30:35 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 02:25:46 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	while (len >= i && ft_is_charset(s1[len], set))
 		len--;
-	pt = malloc(sizeof(pt) * (len - i + 2));
+	pt = malloc(sizeof(char) * (len - i + 2));
 	if (!pt)
 		return (0);
 	while (i <= len)

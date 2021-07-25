@@ -6,7 +6,7 @@
 #    By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/13 19:04:24 by spoliart          #+#    #+#              #
-#    Updated: 2021/06/28 21:31:49 by spoliart         ###   ########.fr        #
+#    Updated: 2021/07/25 00:46:12 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRCS			=	char/ft_isalnum.c \
 					char/ft_isascii.c \
 					char/ft_isdigit.c \
 					char/ft_isprint.c \
+					char/ft_isspace.c \
 					char/ft_tolower.c \
 					char/ft_toupper.c \
 					print/ft_putchar_fd.c \
@@ -69,7 +70,7 @@ SRCS			=	char/ft_isalnum.c \
 					print/ft_putnbr_fd.c \
 					print/ft_putstr_fd.c \
 					str/ft_split.c \
-					str/ft_free_split.c \
+					str/ft_free_tab.c \
 					str/ft_strchr.c \
 					str/ft_strdup.c \
 					str/ft_strjoin.c \

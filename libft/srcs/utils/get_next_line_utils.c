@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 16:08:12 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/28 21:45:03 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 02:30:28 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	j = ft_strlen_gnl((char *)s1) + ft_strlen_gnl((char *)s2);
-	ret = malloc(sizeof(ret) * (j + 1));
+	ret = malloc(sizeof(char) * (j + 1));
 	if (!ret)
 		return (NULL);
 	j = -1;
@@ -88,7 +88,7 @@ char	*ft_substr_gnl(char *s, unsigned int start, size_t len)
 		size = n;
 	else
 		size = len;
-	ret = malloc(sizeof(ret) * (size + 1));
+	ret = malloc(sizeof(char) * (size + 1));
 	if (!ret)
 		return (NULL);
 	while (s[start + i] && i < len)

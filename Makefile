@@ -6,7 +6,7 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/07/22 22:19:49 by spoliart         ###   ########.fr        #
+#    Updated: 2021/07/25 01:57:41 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,3 +58,7 @@ re:
 
 norme:
 	norminette includes srcs
+
+# @ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"` ; ./push_swap $(ARG)
+# @ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"` ; time ./push_swap $(ARG)
+# @ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"` ; ./push_swap $(ARG) | wc -l

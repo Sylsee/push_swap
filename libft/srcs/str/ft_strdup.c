@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:31:01 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 12:59:34 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 02:26:01 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	dup = malloc(sizeof(dup) * (i + 1));
+	dup = malloc(sizeof(char) * (i + 1));
 	if (!dup)
 		return (0);
 	i = -1;

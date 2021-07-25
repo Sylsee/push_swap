@@ -6,13 +6,13 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:45:13 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/22 23:53:08 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/23 18:27:27 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ps_atoi(char *s, int *err, t_stack **lst)
+int	ps_atoi(char *s, int *err)
 {
 	int		sign;
 	long	nbr;
@@ -34,9 +34,7 @@ int	ps_atoi(char *s, int *err, t_stack **lst)
 			return (0);
 		}
 	}
-	if (*s && !(ft_isdigit(*s)) && *s != ' ')
+	if (*s && !(ft_isdigit(*s)))
 		*err = 1;
-	if (*s && *s == ' ')
-		create_lst(0, s++, lst);
 	return (nbr * sign);
 }

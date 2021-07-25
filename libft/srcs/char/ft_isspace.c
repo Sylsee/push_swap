@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spoliart <spoliart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/27 00:51:44 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/28 21:31:13 by spoliart         ###   ########.fr       */
+/*   Created: 2021/07/23 18:09:34 by spoliart          #+#    #+#             */
+/*   Updated: 2021/07/23 18:17:47 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_split(char **tab)
+int	ft_isspace(int c)
 {
-	int	i;
-
-	i = -1;
-	if (tab)
-	{
-		while (tab[++i])
-			free(tab[i]);
-		free(tab);
-	}
+	return (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ');
 }

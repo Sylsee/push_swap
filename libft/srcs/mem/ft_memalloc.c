@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:24:08 by spoliart          #+#    #+#             */
-/*   Updated: 2020/10/12 20:25:27 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 02:28:50 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*ret;
 
-	ret = malloc(sizeof(ret) * (size + 1));
+	ret = malloc(sizeof(void) * (size + 1));
 	if (!ret)
 		return (NULL);
 	while (size--)

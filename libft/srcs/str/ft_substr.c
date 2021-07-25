@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 23:29:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/05/30 13:01:47 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 02:25:27 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		size = ft_strlen(s);
 	else
 		size = len;
-	ret = malloc(sizeof(ret) * (size + 1));
+	ret = malloc(sizeof(char) * (size + 1));
 	if (!ret)
 		return (NULL);
 	while (s[start + i] && i < len)

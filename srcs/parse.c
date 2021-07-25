@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:45:08 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/22 23:44:00 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 01:31:17 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,68 @@ int	is_duplicate(t_stack *lst)
 	return (0);
 }
 
-int	create_lst(int ac, char **av, t_stack **lst)
+int	check_arg(char *s)
+{
+	int	i;
+	int	ret;
+
+	i = 0;
+	ret = 0;
+	if (!s || !s[i] || ft_isspace(s[i]))
+		return (-1);
+	while (s[i] && (ft_isdigit(s[i]) || ft_isspace(s[i]) || s[i] == '-'
+			|| s[i] == '+'))
+	{
+		if (i > 0 && ft_isspace(s[i - 1])
+			&& (ft_isdigit(s[i]) || s[i] == '-' || s[i] == '+'))
+			ret++;
+		i++;
+	}
+	if (s[i])
+		return (-1);
+	return (ret);
+}
+
+t_stack	*get_lst(t_stack **lst, char **tab, int len)
 {
 	t_stack	*tmp;
 
-	tmp = ps_new_node(lst, av[ac]);
-	if (!tmp)
+	while (len >= 0)
 	{
-		ps_free_lst(*lst);
-		return (0);
+		tmp = ps_new_node(lst, tab[len]);
+		if (!tmp)
+			return (0);
+		*lst = tmp;
+		len--;
 	}
-	*lst = tmp;
+	return (*lst);
+}
+
+int	create_lst(char *av, t_stack **lst)
+{
+	int		status;
+	char	**tab;
+	t_stack	*tmp;
+
+	status = check_arg(av);
+	if (status == -1)
+		return (0);
+	else if (status == 0)
+	{
+		tmp = ps_new_node(lst, av);
+		if (!tmp)
+			return (0);
+		*lst = tmp;
+	}
+	else if (status > 0)
+	{
+		tab = ft_split(av, "\t\n\v\f\r ");
+		tmp = get_lst(lst, tab, status);
+		ft_free_tab(tab);
+		if (!tmp)
+			return (0);
+		*lst = tmp;
+	}
 	return (1);
 }
 
@@ -50,8 +101,13 @@ t_stack	*ps_parse(int ac, char **av)
 
 	lst = NULL;
 	while (--ac)
-		if (!(create_lst(ac, av, &lst)))
+	{
+		if (!(create_lst(av[ac], &lst)))
+		{
+			ps_free_lst(lst);
 			return (NULL);
+		}
+	}
 	if (is_duplicate(lst))
 	{
 		ps_free_lst(lst);

@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:17:20 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/28 21:44:39 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 02:30:04 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	get_next_line(int fd, char **line)
 	i = -1;
 	if (read(fd, 0, 0) == -1 || fd < 0 || !line || BUFFER_SIZE < 1)
 		return (-1);
-	buffer = malloc(sizeof(buffer) * (BUFFER_SIZE + 1));
+	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (-1);
 	while (i != 0 && ft_check_gnl(tab[fd]))
