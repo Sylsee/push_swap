@@ -6,9 +6,12 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/07/25 01:57:41 by spoliart         ###   ########.fr        #
+#    Updated: 2021/07/25 03:55:17 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+_END		=	\e[0m
+_YELLOW		=	\e[33m
 
 NAME = push_swap
 
@@ -33,7 +36,7 @@ INC = -I includes/
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	make -C libft
+	@make -C libft
 	gcc $(OBJS) -Llibft -lft -o $(NAME)
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
@@ -42,22 +45,22 @@ $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
 $(OBJS): | $(DIR_OBJS)
 
 $(DIR_OBJS):
-	mkdir -p $(DIR_OBJS)
+	@mkdir -p $(DIR_OBJS)
 
 clean:
-	make clean -C libft
-	rm -rf $(DIR_OBJS)
+	@make clean -C libft
+	@rm -rf $(DIR_OBJS)
 
 fclean: clean
-	make fclean -C libft
-	rm -f $(NAME)
+	@make fclean -C libft
+	@rm -f $(NAME)
 
 re:
-	make fclean
-	make
+	@make fclean
+	@make
 
 norme:
-	norminette includes srcs
+	@norminette includes srcs
 
 # @ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"` ; ./push_swap $(ARG)
 # @ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"` ; time ./push_swap $(ARG)
