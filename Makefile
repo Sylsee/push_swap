@@ -6,7 +6,7 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/07/25 03:55:17 by spoliart         ###   ########.fr        #
+#    Updated: 2021/07/27 03:22:31 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,17 +30,17 @@ DIR_SRCS = ./srcs/
 DIR_OBJS = ./objs/
 OBJS = $(SRCS:%.c=$(DIR_OBJS)%.o)
 
-FLAG = -Wall -Wextra -Werror
+FLAGS = -g -O0 -Wall -Wextra -Werror
 INC = -I includes/
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C libft
-	gcc $(OBJS) -Llibft -lft -o $(NAME)
+	gcc $(FLAGS) $(OBJS) -Llibft -lft -o $(NAME)
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
-	gcc $(FLAG) $(INC) -c $< -o $@
+	gcc $(FLAGS) $(INC) -c $< -o $@
 
 $(OBJS): | $(DIR_OBJS)
 

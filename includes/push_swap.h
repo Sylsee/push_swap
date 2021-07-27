@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 03:00:59 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/27 03:16:21 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 typedef struct s_env
 {
 	int		size;
+	char	**cmd;
 	t_stack	*a;
 	t_stack	*b;
 }				t_env;
@@ -42,16 +43,13 @@ int				ps_atoi(char *s, int *err);
 t_stack			*stack_last(t_stack *stack);
 void			print_stacks(t_stack *a, t_stack *b);
 int				stack_size(t_stack *s);
-void			sa(t_env **env);
-void			sb(t_env **env);
+int				A_is_sorted(t_stack *a);
+void			s(t_stack **a);
 void			ss(t_env **env);
-void			pa(t_env **env);
-void			pb(t_env **env);
-void			ra(t_env **env);
-void			rb(t_env **env);
+void			p(t_stack **a, t_stack **b);
+void			r(t_stack **a);
 void			rr(t_env **env);
-void			rra(t_env **env);
-void			rrb(t_env **env);
-void			rrr(t_env **env);
+void			re(t_stack **a);
+void			rre(t_env **env);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:45:08 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 01:31:17 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/25 16:27:32 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ t_stack	*get_lst(t_stack **lst, char **tab, int len)
 {
 	t_stack	*tmp;
 
+	if (!tab)
+		return (NULL);
 	while (len >= 0)
 	{
 		tmp = ps_new_node(lst, tab[len]);

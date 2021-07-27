@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   r.c                                                :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 14:08:07 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/27 03:07:40 by spoliart         ###   ########.fr       */
+/*   Created: 2021/07/27 03:25:25 by spoliart          #+#    #+#             */
+/*   Updated: 2021/07/27 03:33:05 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	r(t_stack **a)
+void	sort(t_env *env, int n)
 {
-	t_stack	*tmp;
-	t_stack	*last;
+	int	i;
 
-	if (!(*a) || !((*a)->next))
-		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	(*a)->prev = NULL;
-	last = stack_last(*a);
-	last->next = tmp;
-	tmp->prev = last;
-	tmp->next = NULL;
-}
-
-void	rr(t_env **env)
-{
-	r(&((*env)->a));
-	r(&((*env)->b));
+	i = 0;
+	if (env->size >= 2 && env->size <= 3)
 }

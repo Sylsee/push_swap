@@ -6,54 +6,37 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:51:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 03:24:01 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/27 02:11:50 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_env **env)
+/**
+ *	Move the first element of a stack on top of b stack
+ *	
+ *	@param a Stack to get element
+ *	@param b Stack to put element
+ */
+void	p(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
-	if (!((*env)->b))
+	if (!(*a))
 		return ;
-	tmp = (*env)->b->next;
+	tmp = (*a)->next;
 	if (tmp)
 		tmp->prev = NULL;
-	if ((*env)->a)
+	if (*b)
 	{
-		(*env)->b->next = (*env)->a;
-		(*env)->a->prev = (*env)->b;
-		(*env)->a = (*env)->b;
+		(*a)->next = *b;
+		(*b)->prev = *a;
+		*b = *a;
 	}
 	else
 	{
-		(*env)->b->next = NULL;
-		(*env)->a = (*env)->b;
+		(*a)->next = NULL;
+		*b = *a;
 	}
-	(*env)->b = tmp;
-}
-
-void	pb(t_env **env)
-{
-	t_stack	*tmp;
-
-	if (!((*env)->a))
-		return ;
-	tmp = (*env)->a->next;
-	if (tmp)
-		tmp->prev = NULL;
-	if ((*env)->b)
-	{
-		(*env)->a->next = (*env)->b;
-		(*env)->b->prev = (*env)->a;
-		(*env)->b = (*env)->a;
-	}
-	else
-	{
-		(*env)->a->next = NULL;
-		(*env)->b = (*env)->a;
-	}
-	(*env)->a = tmp;
+	*a = tmp;
 }

@@ -6,42 +6,36 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:15:56 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 02:59:30 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/27 02:25:38 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_env **env)
+/**
+ *	Swap the first two elements of a
+ */
+void	s(t_stack **a)
 {
 	int	tmp;
 
-	if ((*env)->size < 2)
+	if (!(*a) || !((*a)->next))
 		return ;
-	if ((*env)->a && (*env)->a->next)
+	if ((*a) && (*a)->next)
 	{
-		tmp = (*env)->a->n;
-		(*env)->a->n = (*env)->a->next->n;
-		(*env)->a->next->n = tmp;
+		tmp = (*a)->n;
+		(*a)->n = (*a)->next->n;
+		(*a)->next->n = tmp;
 	}
 }
 
-void	sb(t_env **env)
-{
-	int	tmp;
-
-	if ((*env)->size < 2)
-		return ;
-	if ((*env)->b && (*env)->b->next)
-	{
-		tmp = (*env)->b->n;
-		(*env)->b->n = (*env)->b->next->n;
-		(*env)->b->next->n = tmp;
-	}
-}
-
+/**
+ *	Swap the first two elements of the two stacks
+ *	
+ *	@param env The struct where the stacks are stored
+ */
 void	ss(t_env **env)
 {
-	sa(env);
-	sb(env);
+	s(&((*env)->a));
+	s(&((*env)->b));
 }
