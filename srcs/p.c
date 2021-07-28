@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:51:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:23:02 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 06:51:31 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *	@param a Stack to get element
  *	@param b Stack to put element
  */
-void	p(t_stack **a, t_stack **b, e_moves moves)
+void	p(t_stack **a, t_stack **b, t_moves moves)
 {
 	t_stack	*tmp;
 

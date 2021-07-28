@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:41:38 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 06:50:54 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ t_stack			*stack_last(t_stack *stack);
 void			print_stacks(t_stack *a, t_stack *b);
 int				stack_size(t_stack *s);
 int				stack_is_sorted(t_stack *a);
-void			s(t_stack **a, e_moves moves);
+int				s(t_stack **a, t_moves moves);
 void			ss(t_env **env);
-void			p(t_stack **a, t_stack **b, e_moves moves);
-void			r(t_stack **a, e_moves moves);
+void			p(t_stack **a, t_stack **b, t_moves moves);
+int				r(t_stack **a, t_moves moves);
 void			rr(t_env **env);
-void			re(t_stack **a, e_moves moves);
-void			rre(t_env **env);
+int				re(t_stack **a, t_moves moves);
+void			rrr(t_env **env);
 void			radix_sort(t_env **env);
 void			three_solution(t_env **env);
 
