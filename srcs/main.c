@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/27 03:33:15 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 04:39:05 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	push_swap(t_env *env)
 	env->size = stack_size(env->a);
 	if (env->size == -1)
 		return ;
-//	sort(env);
+//	print_stacks(env->a, env->b);
+	radix_sort(&env);
 //	print_stacks(env->a, env->b);
 }
 

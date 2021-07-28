@@ -6,13 +6,13 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:53:22 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/27 02:47:35 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 04:25:48 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	A_is_sorted(t_stack *a)
+int	stack_is_sorted(t_stack *a)
 {
 	int	tmp;
 

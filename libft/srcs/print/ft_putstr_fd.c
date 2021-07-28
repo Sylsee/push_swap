@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 00:31:49 by spoliart          #+#    #+#             */
-/*   Updated: 2021/06/28 21:40:52 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 03:43:41 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
-		while (*s)
-			ft_putchar_fd(*s++, fd);
+	while (s && *s)
+		write(fd, s++, 1);
 }
