@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:15:56 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/27 02:25:38 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 06:30:38 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  *	Swap the first two elements of a
  */
-void	s(t_stack **a)
+void	s(t_stack **a, e_moves moves)
 {
 	int	tmp;
 
@@ -27,6 +27,10 @@ void	s(t_stack **a)
 		(*a)->n = (*a)->next->n;
 		(*a)->next->n = tmp;
 	}
+	if (moves == sa)
+		ft_putstr_fd("sa\n", 1);
+	else if (moves == sb)
+		ft_putstr_fd("sb\n", 1);
 }
 
 /**
@@ -36,6 +40,6 @@ void	s(t_stack **a)
  */
 void	ss(t_env **env)
 {
-	s(&((*env)->a));
-	s(&((*env)->b));
+	s(&((*env)->a), none);
+	s(&((*env)->b), none);
 }
