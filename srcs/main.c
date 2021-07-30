@@ -6,11 +6,12 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:42:05 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/30 06:53:17 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <time.h>
 
 /**
 	p(&(env->a), &(env->b), pb);
@@ -27,19 +28,29 @@
 	print_stacks(env->a, env->b);
  */
 
-t_env	*push_swap(t_env *env)
+static t_env	*push_swap(t_env *env)
 {
+//	clock_t tic2 = clock();
 	env->size = stack_size(env->a);
+//	clock_t tac2 = clock();
+//	clock_t tic3 = clock();
 	if (env->size == -1)
 		return (env);
-	if (env->size == 3)
-		three_solution(&env);
+	else if (env->size == 2)
+		s(&(env->a), sa);
+	else if (env->size == 3)
+		three_sort(&env);
 	else if (env->size > 3 && env->size <= 10)
 		;
-	else if (env->size > 10 && env->size <= 100)
-		;
-	else if (env->size > 100)
+	else if (env->size > 10 && env->size < 100)
+		insertion_sort(&env);
+	else if (env->size >= 100)
 		radix_sort(&env);
+//	clock_t tac3 = clock();
+//	printf("size: %d\n", env->size);
+//	printf("Size: [%f]seconds\n", (double)(tac2 - tic2) / CLOCKS_PER_SEC);
+//	printf("Sort: [%f]seconds\n", (double)(tac3 - tic3) / CLOCKS_PER_SEC);
+//	print_stacks(env->a, env->b);
 	return (env);
 }
 

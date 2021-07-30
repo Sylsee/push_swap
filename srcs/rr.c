@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:21:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:51:54 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 22:26:15 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 int	re(t_stack **a, t_moves moves)
 {
-	t_stack	*tmp;
+	t_stack	*new_last;
+	t_stack	*new_first;
 
 	if (!(*a) || !((*a)->next))
 		return (0);
-	tmp = stack_last(*a);
-	tmp->prev->next = NULL;
-	tmp->prev = NULL;
-	tmp->next = *a;
-	(*a)->prev = tmp;
-	*a = tmp;
+	new_first = *a;
+	while (new_first->next)
+	{
+		new_last = new_first;
+		new_first = new_first->next;
+	}
+	new_last->next = NULL;
+	new_first->next = *a;
+	*a = new_first;
 	if (moves == rra)
 		ft_putstr_fd("rra\n", 1);
 	else if (moves == rrb)

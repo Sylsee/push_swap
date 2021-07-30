@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:27:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 02:20:24 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 22:28:40 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_stack	*ps_new_node(t_stack **lst, char *n)
 {
 	int		err;
 	t_stack	*new;
-	t_stack	*tmp;
 
 	err = 0;
 	new = malloc(sizeof(t_stack));
@@ -29,14 +28,9 @@ t_stack	*ps_new_node(t_stack **lst, char *n)
 		return (NULL);
 	}
 	if (*lst)
-	{
-		tmp = *lst;
-		tmp->prev = new;
 		new->next = *lst;
-	}
 	else
 		new->next = NULL;
-	new->prev = NULL;
 	return (new);
 }
 

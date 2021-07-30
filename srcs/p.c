@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:51:23 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:51:31 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 22:18:23 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,9 @@ void	p(t_stack **a, t_stack **b, t_moves moves)
 	if (!(*a))
 		return ;
 	tmp = (*a)->next;
-	if (tmp)
-		tmp->prev = NULL;
 	if (*b)
 	{
 		(*a)->next = *b;
-		(*b)->prev = *a;
 		*b = *a;
 	}
 	else

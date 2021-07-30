@@ -6,7 +6,7 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/07/28 04:33:26 by spoliart         ###   ########.fr        #
+#    Updated: 2021/07/30 04:33:40 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRCS =	main.c \
 		p.c \
 		r.c \
 		rr.c \
-		sort.c
+		three_sort.c \
+		radix_sort.c \
+		insertion_sort.c
 
 DIR_SRCS = ./srcs/
 DIR_OBJS = ./objs/

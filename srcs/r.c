@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:08:07 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:51:43 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 22:18:55 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ int	r(t_stack **a, t_moves moves)
 		return (0);
 	tmp = *a;
 	*a = (*a)->next;
-	(*a)->prev = NULL;
 	last = stack_last(*a);
 	last->next = tmp;
-	tmp->prev = last;
 	tmp->next = NULL;
 	if (moves == ra)
 		ft_putstr_fd("ra\n", 1);

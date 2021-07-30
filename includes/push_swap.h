@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:50:54 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/30 04:36:02 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef enum moves
 typedef struct s_stack
 {
 	int				n;
-	struct s_stack	*prev;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -50,7 +49,6 @@ int				main(int ac, char **av);
 void			print_and_exit(char *s);
 t_stack			*ps_parse(int ac, char **av);
 t_stack			*ps_new_node(t_stack **lst, char *n);
-int				create_lst(char *av, t_stack **lst);
 void			ps_free_lst(t_stack *lst);
 int				ps_atoi(char *s, int *err);
 t_stack			*stack_last(t_stack *stack);
@@ -64,7 +62,8 @@ int				r(t_stack **a, t_moves moves);
 void			rr(t_env **env);
 int				re(t_stack **a, t_moves moves);
 void			rrr(t_env **env);
+void			three_sort(t_env **env);
 void			radix_sort(t_env **env);
-void			three_solution(t_env **env);
+void			insertion_sort(t_env **env);
 
 #endif

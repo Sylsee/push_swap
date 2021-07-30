@@ -6,13 +6,13 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:45:08 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 16:27:32 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/30 04:28:48 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_duplicate(t_stack *lst)
+static int	is_duplicate(t_stack *lst)
 {
 	t_stack	*tmp;
 
@@ -30,7 +30,7 @@ int	is_duplicate(t_stack *lst)
 	return (0);
 }
 
-int	check_arg(char *s)
+static int	check_arg(char *s)
 {
 	int	i;
 	int	ret;
@@ -52,7 +52,7 @@ int	check_arg(char *s)
 	return (ret);
 }
 
-t_stack	*get_lst(t_stack **lst, char **tab, int len)
+static t_stack	*get_lst(t_stack **lst, char **tab, int len)
 {
 	t_stack	*tmp;
 
@@ -69,7 +69,7 @@ t_stack	*get_lst(t_stack **lst, char **tab, int len)
 	return (*lst);
 }
 
-int	create_lst(char *av, t_stack **lst)
+static int	create_lst(char *av, t_stack **lst)
 {
 	int		status;
 	char	**tab;

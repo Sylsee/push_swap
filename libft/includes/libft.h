@@ -6,7 +6,7 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:34:43 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/25 00:46:25 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/30 06:47:21 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <limits.h>
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
@@ -69,11 +70,12 @@ char				**ft_split(char const *s, char *set);
 void				ft_free_tab(char **tab);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-void				ft_putchar_fd(char c, int fd);
+void				ft_putchar_fd(unsigned char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putxchar_fd(char c, int fd, int x);
+void				ft_putbits_fd(size_t size, void *ptr, int fd);
 
 typedef struct s_list
 {

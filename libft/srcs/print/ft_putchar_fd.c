@@ -6,13 +6,13 @@
 /*   By: spoliart <sylvio.poliart@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 00:31:49 by spoliart          #+#    #+#             */
-/*   Updated: 2020/10/15 19:37:49 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/28 20:16:44 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(unsigned char c, int fd)
 {
 	write(fd, &c, 1);
 }
