@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:53:22 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/30 06:31:19 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/07/30 19:19:23 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	stack_is_sorted(t_stack *a)
 	tmp = a->n;
 	while (a)
 	{
-		if (tmp >= 0 && a->n < 0)
+		//if (tmp >= 0 && a->n < 0)
+		if (!((tmp >> 31) & 1) && (a->n >> 31) & 1)
 			;
 		else if (tmp > a->n)
 			return (0);

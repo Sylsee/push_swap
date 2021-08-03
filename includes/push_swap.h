@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/30 04:36:02 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/01 00:06:55 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ typedef struct s_env
 	int		size;
 	char	**cmd;
 	t_stack	*a;
+	t_stack	*a_last;
 	t_stack	*b;
+	t_stack	*b_last;
 }				t_env;
 
 int				main(int ac, char **av);
@@ -63,7 +65,8 @@ void			rr(t_env **env);
 int				re(t_stack **a, t_moves moves);
 void			rrr(t_env **env);
 void			three_sort(t_env **env);
-void			radix_sort(t_env **env);
 void			insertion_sort(t_env **env);
+void			radix_sort(t_env **env);
+void			quick_sort(t_env **env, int low, int high);
 
 #endif
