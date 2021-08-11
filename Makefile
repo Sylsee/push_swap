@@ -6,59 +6,79 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/08/01 00:04:40 by spoliart         ###   ########.fr        #
+#    Updated: 2021/08/11 02:27:33 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 _END		=	\e[0m
 _YELLOW		=	\e[33m
 
-NAME = push_swap
+PUSH_SWAP =	push_swap
+CHECKER	=	checker
 
-SRCS =	main.c \
-		error.c \
-		lst.c \
-		parse.c \
-		ps_atoi.c \
-		stack.c \
-		s.c \
-		p.c \
-		r.c \
-		rr.c \
-		three_sort.c \
-		radix_sort.c \
-		insertion_sort.c \
-		quick_sort.c
+SRCS_P =	push_swap.c \
+			error.c \
+			lst.c \
+			parse.c \
+			ps_atoi.c \
+			stack.c \
+			s.c \
+			p.c \
+			r.c \
+			rr.c \
+			three_sort.c \
+			short_sort.c \
+			radix_sort.c \
+			insertion_sort.c \
+			quick_sort.c
+
+SRCS_C =	checker.c \
+			error.c \
+			lst.c \
+			parse.c \
+			ps_atoi.c \
+			stack.c \
+			s.c \
+			p.c \
+			r.c \
+			rr.c
 
 DIR_SRCS = ./srcs/
 DIR_OBJS = ./objs/
-OBJS = $(SRCS:%.c=$(DIR_OBJS)%.o)
+OBJS_P = $(SRCS_P:%.c=$(DIR_OBJS)%.o)
+OBJS_C = $(SRCS_C:%.c=$(DIR_OBJS)%.o)
 
-FLAGS = -g -O0 -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 INC = -I includes/
-LIBFT = -Llibft -lft
+LIBFT = libft/libft.a
 
-all: $(NAME)
+all: $(PUSH_SWAP) $(CHECKER)
 
-$(NAME): $(OBJS)
+$(PUSH_SWAP): $(OBJS_P)
 	@make -C libft
-	gcc $(FLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	gcc $(FLAGS) $(OBJS_P) $(INC) $(LIBFT) -o $(PUSH_SWAP)
+
+$(CHECKER): $(OBJS_C)
+	@make -C libft
+	gcc $(FLAGS) $(OBJS_C) $(INC) $(LIBFT) -o $(CHECKER)
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
 	gcc $(FLAGS) $(INC) -c $< -o $@
 
-$(OBJS): | $(DIR_OBJS)
+$(OBJS_P): | $(DIR_OBJS)
+
+$(OBJS_C): | $(DIR_OBJS)
 
 $(DIR_OBJS):
 	@mkdir -p $(DIR_OBJS)
 
 clean:
 	@make clean -C libft
-	@rm -rf $(DIR_OBJS)
+	rm -rf $(DIR_OBJS)
 
 fclean: clean
 	@make fclean -C libft
-	@rm -f $(NAME)
+	rm -f $(PUSH_SWAP) $(CHECKER)
 
 re:
 	@make fclean

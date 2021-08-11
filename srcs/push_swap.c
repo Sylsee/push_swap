@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/03 04:16:10 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/11 02:28:05 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 static t_env	*push_swap(t_env *env)
 {
 //	clock_t tic2 = clock();
-	env->size = stack_size(env->a);
+	env->size = stack_size_and_sorted(env->a);
 //	clock_t tac2 = clock();
 //	clock_t tic3 = clock();
 	if (env->size == -1)
@@ -39,19 +39,19 @@ static t_env	*push_swap(t_env *env)
 	else if (env->size == 2)
 		s(&(env->a), sa);
 	else if (env->size == 3)
-		three_sort(&env);
-	else if (env->size > 3 && env->size <= 10)
+		three_sort(&(env->a));
+	else if (env->size <= 5)
+		short_sort(&env);
+	else if (env->size <= 50)
 		insertion_sort(&env);
-	else if (env->size > 10 && env->size < 100)
-		insertion_sort(&env);
-	else if (env->size >= 100)
+//	else if (env->size <= 100)
+//		sort(&env);
+	else
 		radix_sort(&env);
-//	else
-//		quick_sort(&env, 0, env->size - 1);
 //	clock_t tac3 = clock();
-//	printf("size: %d\n", env->size);
 //	printf("Size: [%f]seconds\n", (double)(tac2 - tic2) / CLOCKS_PER_SEC);
 //	print_stacks(env->a, env->b);
+//	printf("size: %d\n", env->size);
 //	printf("Sort: [%f]seconds\n", (double)(tac3 - tic3) / CLOCKS_PER_SEC);
 	return (env);
 }

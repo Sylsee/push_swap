@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 04:30:13 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/30 04:34:28 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/03 04:45:30 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,29 @@
 	print_stacks((*env)->a, (*env)->b);
  */
 
-void	three_sort(t_env **env)
+void	three_sort(t_stack **a)
 {
 	int	first;
 	int	second;
 	int	third;
 
-	first = (*env)->a->n;
-	second = (*env)->a->next->n;
-	third = (*env)->a->next->next->n;
+	first = (*a)->n;
+	second = (*a)->next->n;
+	third = (*a)->next->next->n;
 	if (first > second && first < third && second < third)
-		s(&((*env)->a), sa);
+		s(a, sa);
 	else if (first > second && first > third && second < third)
-		r(&((*env)->a), ra);
+		r(a, ra);
 	else if (first < second && first > third && second > third)
-		re(&((*env)->a), rra);
+		re(a, rra);
 	else if (first > second && first > third && second > third)
 	{
-		s(&((*env)->a), sa);
-		re(&((*env)->a), rra);
+		s(a, sa);
+		re(a, rra);
 	}
 	else if (first < second && first < third && second > third)
 	{
-		s(&((*env)->a), sa);
-		r(&((*env)->a), ra);
+		s(a, sa);
+		r(a, ra);
 	}
 }

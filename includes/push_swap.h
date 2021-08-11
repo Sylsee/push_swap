@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/01 00:06:55 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/11 02:27:47 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int				ps_atoi(char *s, int *err);
 t_stack			*stack_last(t_stack *stack);
 void			print_stacks(t_stack *a, t_stack *b);
 int				stack_size(t_stack *s);
+int				stack_size_and_sorted(t_stack *s);
 int				stack_is_sorted(t_stack *a);
 int				s(t_stack **a, t_moves moves);
 void			ss(t_env **env);
@@ -64,7 +65,8 @@ int				r(t_stack **a, t_moves moves);
 void			rr(t_env **env);
 int				re(t_stack **a, t_moves moves);
 void			rrr(t_env **env);
-void			three_sort(t_env **env);
+void			three_sort(t_stack **a);
+void			short_sort(t_env **env);
 void			insertion_sort(t_env **env);
 void			radix_sort(t_env **env);
 void			quick_sort(t_env **env, int low, int high);

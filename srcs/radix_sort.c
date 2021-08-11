@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 04:23:40 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/30 19:08:31 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:56:38 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,23 @@
 	rre(&(*env));
 	print_stacks((*env)->a, (*env)->b);
  */
+
+static int	radix_stack_is_sorted(t_stack *a)
+{
+	int	tmp;
+
+	tmp = a->n;
+	while (a)
+	{
+		if (!((tmp >> 31) & 1) && (a->n >> 31) & 1)
+			;
+		else if (tmp > a->n)
+			return (0);
+		tmp = a->n;
+		a = a->next;
+	}
+	return (1);
+}
 
 static void	invert_negative(t_env **env)
 {
@@ -52,7 +69,7 @@ void	radix_sort(t_env **env)
 
 	i = 0;
 	negative = 0;
-	while (!(stack_is_sorted((*env)->a)))
+	while (!(radix_stack_is_sorted((*env)->a)))
 	{
 		j = 0;
 		while (j < (*env)->size)
