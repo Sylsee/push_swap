@@ -6,12 +6,11 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/11 02:28:05 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/12 23:44:27 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <time.h>
 
 /**
 	p(&(env->a), &(env->b), pb);
@@ -30,10 +29,8 @@
 
 static t_env	*push_swap(t_env *env)
 {
-//	clock_t tic2 = clock();
 	env->size = stack_size_and_sorted(env->a);
-//	clock_t tac2 = clock();
-//	clock_t tic3 = clock();
+//	print_stacks(env->a, env->b);
 	if (env->size == -1)
 		return (env);
 	else if (env->size == 2)
@@ -44,15 +41,9 @@ static t_env	*push_swap(t_env *env)
 		short_sort(&env);
 	else if (env->size <= 50)
 		insertion_sort(&env);
-//	else if (env->size <= 100)
-//		sort(&env);
 	else
 		radix_sort(&env);
-//	clock_t tac3 = clock();
-//	printf("Size: [%f]seconds\n", (double)(tac2 - tic2) / CLOCKS_PER_SEC);
 //	print_stacks(env->a, env->b);
-//	printf("size: %d\n", env->size);
-//	printf("Sort: [%f]seconds\n", (double)(tac3 - tic3) / CLOCKS_PER_SEC);
 	return (env);
 }
 

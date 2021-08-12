@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 21:01:56 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/11 02:27:16 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/12 23:45:48 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,18 @@ static int	the_place_to_be(t_stack *a, int n)
 	return (i);
 }
 
+static void	after(t_env **env, int pos)
+{
+	if ((pos >> 31) & 1)
+		pos -= 1;
+	if ((pos >> 31) & 1)
+		while (pos++)
+			r(&((*env)->a), ra);
+	else
+		while (pos--)
+			re(&((*env)->a), rra);
+}
+
 static void	choose_rotation(t_env **env)
 {
 	int	tmp;
@@ -59,14 +71,14 @@ static void	choose_rotation(t_env **env)
 			r(&((*env)->a), ra);
 	p(&((*env)->b), &((*env)->a), pa);
 	pos = tmp;
-	if ((pos >> 31) & 1)
-		pos -= 1;
-	if ((pos >> 31) & 1)
-		while (pos++)
-			r(&((*env)->a), ra);
-	else
-		while (pos--)
-			re(&((*env)->a), rra);
+	if ((*env)->b && (*env)->b->n < (*env)->a->n
+		&& (*env)->b->n > stack_last((*env)->a)->n)
+	{
+		if ((pos >> 31) & 1)
+			pos--;
+		p(&((*env)->b), &((*env)->a), pa);
+	}
+	after(env, pos);
 }
 
 static void	easy(t_env **env)
