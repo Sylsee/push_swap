@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 15:39:27 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/01 00:35:07 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/15 03:49:41 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	partition(t_env **env, int low, int high)
 	j = low;
 	i = low - 1;
 	pivot = stack_get_n((*env)->a, high);
-	printf("pivot: [%d]\n", pivot);
+//	printf("pivot: [%d]\n", pivot);
 	while (j < high)
 	{
 		if ((*env)->a->n < pivot)
@@ -66,7 +66,7 @@ void	quick_sort(t_env **env, int low, int high)
 
 	if (low < high)
 	{
-		print_stacks((*env)->a, (*env)->b);
+//		print_stacks((*env)->a, (*env)->b);
 		pivot = partition(env, low, high);
 		quick_sort(env, low, pivot - 1);
 		quick_sort(env, pivot + 1, high);
