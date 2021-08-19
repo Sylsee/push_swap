@@ -6,7 +6,7 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/08/11 02:27:33 by spoliart         ###   ########.fr        #
+#    Updated: 2021/08/19 02:47:23 by spoliart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS_P =	push_swap.c \
 			short_sort.c \
 			radix_sort.c \
 			insertion_sort.c \
-			quick_sort.c
+			quick_sort.c \
+			prepare_quick_sort.c
 
 SRCS_C =	checker.c \
 			error.c \

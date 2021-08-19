@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 04:30:13 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/03 04:45:30 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/18 00:52:20 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 	print_stacks((*env)->a, (*env)->b);
  */
 
-void	three_sort(t_stack **a)
+int	three_sort(t_stack **a)
 {
 	int	first;
 	int	second;
@@ -52,4 +52,5 @@ void	three_sort(t_stack **a)
 		s(a, sa);
 		r(a, ra);
 	}
+	return (0);
 }
