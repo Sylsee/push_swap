@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/19 02:08:54 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/23 03:54:02 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static t_env	*push_swap(t_env *env)
 		short_sort(&env);
 	else if (env->size <= 50)
 		insertion_sort(&env);
+	else if (env->size <= 100)
+		radix_sort(&env);
 	else
 		prepare_quick_sort(&env);
 //	print_stacks(env->a, env->b);
@@ -64,11 +66,6 @@ int	main(int argc, char **argv)
 	}
 	env->b = NULL;
 	env = push_swap(env);
-/*	while (env->a)
-	{
-		printf("n: [%d]\n", env->a->n);
-		env->a = env->a->next;
-	}*/
 	ps_free_lst(env->a);
 	ps_free_lst(env->b);
 	free(env);
