@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 01:30:27 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/19 02:46:00 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/24 03:17:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void	prepare_quick_sort(t_env **env)
 	}
 	(*env)->arr = quick_sort_arr(arr, 0, (*env)->size - 1);
 	free(arr);
-	quick_sort(env);
+	quick_sort(env, (*env)->size, 0, (*env)->size);
 }
