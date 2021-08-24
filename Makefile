@@ -6,7 +6,7 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/08/19 02:47:23 by spoliart         ###   ########.fr        #
+#    Updated: 2021/08/24 22:05:43 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,15 +56,18 @@ LIBFT = libft/libft.a
 all: $(PUSH_SWAP) $(CHECKER)
 
 $(PUSH_SWAP): $(OBJS_P)
+	@printf "\n"
 	@make -C libft
-	gcc $(FLAGS) $(OBJS_P) $(INC) $(LIBFT) -o $(PUSH_SWAP)
+	@gcc $(FLAGS) $(OBJS_P) $(INC) $(LIBFT) -o $(PUSH_SWAP)
 
 $(CHECKER): $(OBJS_C)
+	@printf "\n"
 	@make -C libft
-	gcc $(FLAGS) $(OBJS_C) $(INC) $(LIBFT) -o $(CHECKER)
+	@gcc $(FLAGS) $(OBJS_C) $(INC) $(LIBFT) -o $(CHECKER)
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
-	gcc $(FLAGS) $(INC) -c $< -o $@
+	@printf "\033[2K\r $(_YELLOW)Compiling $< $(_END)⌛"
+	@gcc $(FLAGS) $(INC) -c $< -o $@
 
 $(OBJS_P): | $(DIR_OBJS)
 

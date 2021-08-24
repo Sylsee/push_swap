@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/19 02:29:16 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/24 03:17:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int				three_sort(t_stack **a);
 void			short_sort(t_env **env);
 void			insertion_sort(t_env **env);
 void			radix_sort(t_env **env);
-void			quick_sort(t_env **env);
+void			quick_sort(t_env **env, int size, int low, int high);
 void			prepare_quick_sort(t_env **env);
 
 #endif
