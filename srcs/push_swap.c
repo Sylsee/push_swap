@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/24 03:23:07 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/25 04:12:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 static t_env	*push_swap(t_env *env)
 {
 	env->size = stack_size_and_sorted(env->a);
-	print_stacks(env->a, env->b);
+	//print_stacks(env->a, env->b);
 	if (env->size == -1)
 		return (env);
 	else if (env->size == 2)

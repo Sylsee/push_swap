@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 04:34:33 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/30 06:24:58 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/25 00:15:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	insertion_sort(t_env **env)
 	int	index;
 
 	i = 0;
-	while ((*env)->a)
+	while (!(stack_is_sorted((*env)->a)))
 	{
 		half = ((*env)->size - i) / 2;
 		index = index_of_smaller((*env)->a);

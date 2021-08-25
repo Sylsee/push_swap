@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:46:33 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/24 03:47:12 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/25 04:21:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,43 +27,51 @@
 	print_stacks((*env)->a, (*env)->b);
  */
 
-int	get_median(int *arr, int low, int high)
+static void	simple_sort(t_stack **a, int size)
 {
-	return (arr[(high - low) / 2 + low]);
-}
-
-void	simple_sort(t_stack *a)
-{
-	int	size;
-
-	size = stack_size(a);
-	if (size == 2 && a->n > a->next->n)
-		s(&a, sa);
+	if (size == 2 && (*a)->n > (*a)->next->n)
+		s(a, none);
 	else if (size == 3)
-		three_sort(&a);
+		three_sort(a);
 }
 
-void	quick_sort(t_env **env, int size, int low, int high)
+static int	partition(t_env **env, int size, int low, int high)
 {
 	int	i;
 	int	median;
 
-	//print_stacks((*env)->a, (*env)->b);
-	if (size <= 3)
-	{
-		simple_sort((*env)->a);
-		return ;
-	}
 	i = -1;
-	median = get_median((*env)->arr, low, high);
+	median = (*env)->arr[(high - low) / 2 + low];
+	printf("\nmedian: [%d]\n\n", median);
+	//fflush(stdout);
 	while (++i < size)
 	{
-		if ((*env)->a->n < median)
+		if ((*env)->a->n <= median)
 			p(&((*env)->a), &((*env)->b), pb);
 		else
 			r(&((*env)->a), ra);
 	}
-	//print_stacks((*env)->a, (*env)->b);
-	quick_sort(env, size / 2, median, high);
-	quick_sort(env, size, low, median);
+	return ((high - low) / 2 + low);
+}
+
+void	quick_sort(t_env **env, int low, int high)
+{
+	int	size;
+	int	pivot;
+
+	size = high - low;
+	if (size > 4 && low < high)
+	{
+		pivot = partition(env, size, low, high);
+		printf("low: [%d]\nhigh: [%d]\nsize: [%d]\npivot: [%d]\n", low, high, size, pivot);
+		quick_sort(env, pivot + 1, high);
+		quick_sort(env, low, pivot - 1);
+	}
+	else if (size <= 3 && low < high)
+	{
+		simple_sort(&((*env)->a), size);
+		size = 3;
+		while (size-- && (*env)->b)
+			p(&((*env)->b), &((*env)->a), none);
+	}
 }
