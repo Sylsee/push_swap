@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:22:11 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/24 22:32:30 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/25 23:39:27 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ typedef struct s_stack
 
 typedef struct s_env
 {
-	int		size;
 	t_stack	*a;
 	t_stack	*b;
+	int		size;
 	int		*arr;
+	int		sorted;
 }				t_env;
 
 int				main(int ac, char **av);

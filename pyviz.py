@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 
-#from Tkinter import *
-import tkinter
+from tkinter import *
 import sys
 import time
 import subprocess
