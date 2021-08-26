@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/26 03:33:11 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/26 15:51:20 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ static t_env	*push_swap(t_env *env)
 		prepare_quick_sort(&env);
 		//insertion_sort(&env);
 	else if (env->size <= 100)
-		radix_sort(&env);
+		prepare_quick_sort(&env);
+		//radix_sort(&env);
 	else
 		prepare_quick_sort(&env);
 	//print_stacks(env->a, env->b);
