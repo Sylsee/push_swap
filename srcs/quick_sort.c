@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:46:33 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/26 20:55:12 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/26 23:33:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,24 +61,23 @@ void	quick_sort(t_env **env, int low, int high)
 	size = high - low;
 	if (size > 2)
 	{
-		last_size = size;
 		pivot = partition(env, size, low, high);
-		printf("before\nlow: [%d]\nhigh: [%d]\npivot: [%d]\n", low, high, pivot);
-		fflush(stdout);
+		//printf("before\nlow: [%d]\nhigh: [%d]\npivot: [%d]\n", low, high, pivot);
+		//fflush(stdout);
 		quick_sort(env, pivot + 1, high);
-		printf("after\nlow: [%d]\nhigh: [%d]\npivot: [%d]\n", low, high, pivot);
-		fflush(stdout);
+		//printf("after\nlow: [%d]\nhigh: [%d]\npivot: [%d]\n", low, high, pivot);
+		//fflush(stdout);
 		quick_sort(env, low, pivot - 1);
 	}
 	else if (size <= 2 && low < high)
 	{
-		(*env)->sorted = 1;
 		if (size == 2 && (*env)->a->n > (*env)->a->next->n)
 			s(&((*env)->a), sa);
 		sorted = (*env)->a->n;
-		printf("size: [%d]\nlast_size: [%d]\n", last_size, size);
-		fflush(stdout);
-		while ( size-- + 1 && (*env)->b)
+		(void)sorted;
+		//printf("size: [%d]\nlast_size: [%d]\n", last_size, size);
+		//fflush(stdout);
+		while (size-- + 1 && (*env)->b)
 			p(&((*env)->b), &((*env)->a), pa);
 	}
 }
