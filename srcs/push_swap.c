@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/26 15:51:20 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/29 01:40:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int argc, char **argv)
 	env = push_swap(env);
 	ps_free_lst(env->a);
 	ps_free_lst(env->b);
+	free(env->arr);
 	free(env);
 	return (0);
 }

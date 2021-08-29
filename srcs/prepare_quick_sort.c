@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 01:30:27 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/25 23:43:47 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/29 01:36:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,19 @@ static int	*quick_sort_arr(int *array, int low, int high)
 void	prepare_quick_sort(t_env **env)
 {
 	int		i;
-	int		*arr;
 	t_stack	*tmp;
 
-	arr = malloc(sizeof(arr) * (*env)->size);
-	if (!arr)
+	(*env)->arr = malloc(sizeof(int) * (*env)->size);
+	if (!(*env)->arr)
 		print_and_exit("Malloc error");
 	i = 0;
 	tmp = (*env)->a;
 	while (tmp)
 	{
-		arr[i++] = tmp->n;
+		(*env)->arr[i++] = tmp->n;
 		tmp = tmp->next;
 	}
-	(*env)->arr = quick_sort_arr(arr, 0, (*env)->size - 1);
-	free(arr);
+	(*env)->arr = quick_sort_arr((*env)->arr, 0, (*env)->size - 1);
 	(*env)->sorted = 0;
 	quick_sort(env, 0, (*env)->size);
 }
