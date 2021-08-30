@@ -6,26 +6,11 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 04:23:40 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/18 19:25:30 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/30 05:28:35 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
-	p(&((*env)->a), &((*env)->b));
-	p(&((*env)->b), &((*env)->a));
-	s(&((*env)->a));
-	s(&((*env)->b));
-	ss(&(*env));
-	r(&((*env)->a));
-	r(&((*env)->b));
-	rr(&(*env));
-	re(&((*env)->a));
-	re(&((*env)->b));
-	rre(&(*env));
-	print_stacks((*env)->a, (*env)->b);
- */
 
 static int	radix_stack_is_sorted(t_stack *a)
 {

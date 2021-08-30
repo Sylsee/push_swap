@@ -6,26 +6,11 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 04:34:33 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/25 00:15:42 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/30 05:28:03 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
-	p(&((*env)->a), &((*env)->b));
-	p(&((*env)->b), &((*env)->a));
-	s(&((*env)->a));
-	s(&((*env)->b));
-	ss(&(*env));
-	r(&((*env)->a));
-	r(&((*env)->b));
-	rr(&(*env));
-	re(&((*env)->a));
-	re(&((*env)->b));
-	rre(&(*env));
-	print_stacks((*env)->a, (*env)->b);
- */
 
 static int	index_of_smaller(t_stack *a)
 {

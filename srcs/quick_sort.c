@@ -6,26 +6,11 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:46:33 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/30 05:22:14 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/30 05:27:34 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
-	p(&((*env)->a), &((*env)->b), pb);
-	p(&((*env)->b), &((*env)->a), pa);
-	s(&((*env)->a), sa);
-	s(&((*env)->b), sb);
-	ss(&(*env), ss);
-	r(&((*env)->a), ra);
-	r(&((*env)->b), rb);
-	rr(&(*env), rr);
-	re(&((*env)->a), rra);
-	re(&((*env)->b), rrb);
-	rre(&(*env), rrr);
-	print_stacks((*env)->a, (*env)->b);
- */
 
 static int	get_index(t_stack *a, int median, int start, int stop)
 {
@@ -112,21 +97,3 @@ void	quick_sort(t_env **env, int low, int high)
 		if (size == 2 && (*env)->a->n > (*env)->a->next->n)
 			s(&((*env)->a), sa);
 }
-/*
-static int	partition(t_env **env, int size, int low, int high)
-{
-	int	i;
-	int	median;
-
-	i = -1;
-	median = (*env)->arr[(high - low) / 2 + low];
-	while (++i < size)
-	{
-		if ((*env)->a->n <= median)
-			p(&((*env)->a), &((*env)->b), pb);
-		else
-			r(&((*env)->a), ra);
-	}
-	return ((high - low) / 2 + low);
-}
-*/
