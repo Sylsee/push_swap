@@ -6,19 +6,11 @@
 /*   By: marvin <spoliart@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 06:59:20 by marvin            #+#    #+#             */
-/*   Updated: 2021/08/29 07:00:18 by marvin           ###   ########.fr       */
+/*   Updated: 2021/08/30 04:42:53 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	ps_rewind(t_env **env, int rewind_small, int rewind_big)
-{
-	while (rewind_small--)
-		re(&((*env)->b), rrb);
-	while (rewind_big--)
-		p(&((*env)->a), &((*env)->b), pb);
-}
 
 static int	more_pa(t_stack *b, int median)
 {
@@ -29,6 +21,14 @@ static int	more_pa(t_stack *b, int median)
 		b = b->next;
 	}
 	return (0);
+}
+
+static void	ps_rewind(t_env **env, int rewind_small, int rewind_big)
+{
+	while (rewind_small--)
+		re(&((*env)->b), rrb);
+	while (rewind_big--)
+		p(&((*env)->a), &((*env)->b), pb);
 }
 
 static int	partition_b(t_env **env, int size, int low, int high)
