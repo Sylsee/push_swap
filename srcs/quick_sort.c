@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:46:33 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/30 04:16:57 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/08/30 05:22:14 by spoliart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 
 static int	get_index(t_stack *a, int median, int start, int stop)
 {
-	int	i;
-	int	index;
+	int		i;
+	int		index;
 	t_stack	*tmp;
 
 	i = -1;
@@ -61,8 +61,8 @@ static int	index_of_pb(t_env **env, int median, int half)
 	size = stack_size((*env)->a);
 	first_index = get_index((*env)->a, median, 0, half);
 	second_index = get_index((*env)->a, median, half, size);
-	if (second_index == -1 ||
-			(first_index != -1 && first_index <= size - second_index))
+	if (second_index == -1
+		|| (first_index != -1 && first_index <= size - second_index))
 		return (first_index);
 	return (second_index);
 }
@@ -95,6 +95,7 @@ static int	partition(t_env **env, int low, int high)
 	}
 	return ((high - low) / 2 + low - 1);
 }
+
 void	quick_sort(t_env **env, int low, int high)
 {
 	int	size;
