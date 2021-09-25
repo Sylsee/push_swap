@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/09/25 03:45:12 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/25 03:51:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static t_env	*checker(t_env *env)
 			free(env);
 			exit(1);
 		}
-		print_stacks(env->a, env->b);
 		free(line);
 	}
 	free(line);
