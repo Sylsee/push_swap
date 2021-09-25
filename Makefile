@@ -6,7 +6,7 @@
 #    By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 15:10:33 by spoliart          #+#    #+#              #
-#    Updated: 2021/08/29 07:01:36 by marvin           ###   ########.fr        #
+#    Updated: 2021/09/25 03:48:14 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,12 +60,12 @@ LIBFT = libft/libft.a
 all: $(LIBFT) $(PUSH_SWAP) $(CHECKER)
 
 $(LIBFT):
-	@make -C libft
+	@make -s -C libft
 
 $(PUSH_SWAP): $(OBJS_P)
 	@printf "\033[2K\r$(_GREEN) All push_swap files compiled into '$(DIR_OBJS)'. $(_END)✅\n"
 ifeq (,$(wildcard ./libft/libft.a))
-	@make -C libft
+	@make -s -C libft
 endif
 	@gcc $(FLAGS) $(OBJS_P) $(INC) $(LIBFT) -o $(PUSH_SWAP)
 	@printf "$(_GREEN) Binary '$(PUSH_SWAP)' created. $(_END)✅\n"
@@ -73,7 +73,7 @@ endif
 $(CHECKER): $(OBJS_C)
 	@printf "\033[2K\r$(_GREEN) All checker files compiled into '$(DIR_OBJS)'. $(_END)✅\n"
 ifeq (,$(wildcard ./libft/libft.a))
-	@make -C libft
+	@make -s -C libft
 endif
 	@gcc $(FLAGS) $(OBJS_C) $(INC) $(LIBFT) -o $(CHECKER)
 	@printf "$(_GREEN) Binary '$(CHECKER)' created. $(_END)✅\n"
@@ -90,18 +90,18 @@ $(DIR_OBJS):
 	@mkdir -p $(DIR_OBJS)
 
 clean:
-	@make clean -C libft
+	@make -s clean -C libft
 	@rm -rf $(DIR_OBJS)
 	@printf "$(_RED) '$(DIR_OBJS)' has been deleted. $(_END)🗑️\n"
 
 fclean: clean
-	@make fclean -C libft
+	@make -s fclean -C libft
 	@rm -f $(PUSH_SWAP) $(CHECKER)
 	@printf "$(_RED) '$(PUSH_SWAP)' and '$(CHECKER)' has been deleted. $(_END)🗑️\n"
 
 re:
-	@make fclean
-	@make
+	@make -s fclean
+	@make -s
 
 norme:
 	@norminette includes srcs

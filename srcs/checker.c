@@ -6,7 +6,7 @@
 /*   By: spoliart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 18:20:03 by spoliart          #+#    #+#             */
-/*   Updated: 2021/08/06 18:58:54 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/09/25 03:45:12 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	move(char *move, t_env *env)
 	else if (ft_strcmp(move, "sb") == 0)
 		s(&(env->b), none);
 	else if (ft_strcmp(move, "ss") == 0)
-		ss(&env);
+		ss(&env, none);
 	else if (ft_strcmp(move, "pb") == 0)
 		p(&(env->a), &(env->b), none);
 	else if (ft_strcmp(move, "pa") == 0)
@@ -29,13 +29,13 @@ static int	move(char *move, t_env *env)
 	else if (ft_strcmp(move, "rb") == 0)
 		r(&(env->b), none);
 	else if (ft_strcmp(move, "rr") == 0)
-		rr(&env);
+		rr(&env, none);
 	else if (ft_strcmp(move, "rra") == 0)
 		re(&(env->a), none);
 	else if (ft_strcmp(move, "rrb") == 0)
 		re(&(env->b), none);
 	else if (ft_strcmp(move, "rrr") == 0)
-		rrr(&env);
+		rrr(&env, none);
 	else
 		return (0);
 	return (1);
@@ -57,6 +57,7 @@ static t_env	*checker(t_env *env)
 			free(env);
 			exit(1);
 		}
+		print_stacks(env->a, env->b);
 		free(line);
 	}
 	free(line);

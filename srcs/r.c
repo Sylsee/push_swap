@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:08:07 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 22:18:55 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/09/25 03:43:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ int	r(t_stack **a, t_moves moves)
 	return (1);
 }
 
-void	rr(t_env **env)
+void	rr(t_env **env, t_moves moves)
 {
-	if (r(&((*env)->a), none) || r(&((*env)->b), none))
+	r(&((*env)->a), none);
+	r(&((*env)->b), none);
+	if (moves == print)
 		ft_putstr_fd("rr\n", 1);
 }

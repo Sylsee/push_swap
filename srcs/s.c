@@ -6,7 +6,7 @@
 /*   By: spoliart <spoliart@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 00:15:56 by spoliart          #+#    #+#             */
-/*   Updated: 2021/07/28 06:51:13 by spoliart         ###   ########.fr       */
+/*   Updated: 2021/09/25 03:43:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int	s(t_stack **a, t_moves moves)
  *	
  *	@param env The struct where the stacks are stored
  */
-void	ss(t_env **env)
+void	ss(t_env **env, t_moves moves)
 {
-	if (s(&((*env)->a), none) || s(&((*env)->b), none))
+	s(&((*env)->a), none);
+	s(&((*env)->b), none);
+	if (moves == print)
 		ft_putstr_fd("ss\n", 1);
 }
